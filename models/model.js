@@ -6,17 +6,18 @@ const Model = new mongoose.Schema({
   priority: { 
     type: String, 
     required: true,
-    enum: ['alta', 'média', 'baixa'], 
+    enum: ['alta', 'média', 'baixa']
   },
   status: { 
     type: String, 
     required: true,
-    enum: ['fazer', 'fazendo', 'feito'], 
+    enum: ['fazer', 'fazendo', 'feito'],
   },
   dueDay: { type: String, required: true },
   createdAt: { type: Date, default: Date.now() }
 })
 
 const Task = mongoose.model('tasks', Model)
+
 
 module.exports = Task;

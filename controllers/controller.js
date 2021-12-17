@@ -7,7 +7,7 @@ const getTasks = async (req, res) => {
   if (tasks.length === 0){
     res.send({ message: "Não há tarefas nesta lista" })
   } else{
-    res.send(tasks)
+    res.status(200).send(tasks)
   }
 };
 
@@ -28,11 +28,14 @@ const taskSubmitted = async(req, res) => {
   const data = req.body
   try{
     const dataSubmitted = await service.post(data)
-    res.send({ message: 'Tarfea criada com sucesso!' })
+    res.status(200).send({ 
+      message: 'Tarefa criada com sucesso!' 
+    })
   } catch(err){
-    res.status(400).send("Preencha os campos necessários!")
-  }
-  
+    res.status(400).send({
+      message: `Preencha os campos necessários.`
+    })
+  } 
 }
 
 const taskModified = async(req, res) => {
@@ -41,9 +44,13 @@ const taskModified = async(req, res) => {
 
   try{
     const dataModified = await service.put(id, data);
-    res.send({ message: 'A alteração foi feita com sucesso!' })
+    res.status(200).send({ 
+      message: 'A alteração foi feita com sucesso!' 
+    })
   } catch(error){
-    res.status(500).send(`O erro ${error} ocorreu no servidor. Não foi possível fazer a alteração`);
+    res.status(500).send({ 
+      message: `O erro ${error} ocorreu no servidor. Não foi possível fazer a alteração`
+    });
   }
 }
 
@@ -52,9 +59,13 @@ const taskDeleted = async (req, res) => {
 
   try{
     const dataDeleted = await service.deleteById(id);
-    res.send({ message: `A tarefa ${dataDeleted.title} foi deletada com sucesso!` })
+    res.status(200).send({ 
+      message: `A tarefa ${dataDeleted.title} foi deletada com sucesso!`
+    })
   } catch(err){
-    res.status(500).send({ message: `Não foi possível apagar esta tarefa devido ao erro ${err}` })
+    res.status(500).send({ 
+      message: `Não foi possível apagar esta tarefa devido ao erro ${err}` 
+    })
   }
 }
 
