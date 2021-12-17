@@ -45,7 +45,7 @@ Testando os endpoints:
  * http://localhost:3000/submit METHOD POST => cadastra uma nova tarefa.
  * http://localhost:3000/edit/:id METHOD PUT => altera uma tarefa já cadastrada.
  * http://localhost:3000/delete/:id METHOD DELETE => apaga uma tarefa pré-cadastrada.
-
+```
 
 ## 🤝 Colaboradores
 
