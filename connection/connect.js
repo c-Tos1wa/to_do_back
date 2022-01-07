@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
-const connection = () => {
-  mongoose.connect('mongodb://localhost:27017/toDoList', {
+const connection = (url, user, pass, data) => {
+  mongoose.connect(`${url}/${data}`, {
+    user: user,
+    pass: pass,
     useNewUrlParser: true
   }).then(() => {
     console.log('Banco de dados MongoDB conectado')
