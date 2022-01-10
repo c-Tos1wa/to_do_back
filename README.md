@@ -37,14 +37,14 @@ Para usar `<To do list>`, siga estas etapas:
 ```
 No terminal, digite npm run dev.
 ```
-Utilizando o Thunder Client, clique em New Request e digite no url http://localhost:3000.
+Utilizando o Thunder Client, clique em New Request e digite no url https://backend-dolist.herokuapp.com/.
 ```
 Testando os endpoints:
- * http://localhost:3000/ METHOD GET => mostra todas as tarefas listadas no banco de dados.
- * http://localhost:3000/:id METHOD GET => mostra uma tarefa específica.
- * http://localhost:3000/submit METHOD POST => cadastra uma nova tarefa.
- * http://localhost:3000/edit/:id METHOD PUT => altera uma tarefa já cadastrada.
- * http://localhost:3000/delete/:id METHOD DELETE => apaga uma tarefa pré-cadastrada.
+ * https://backend-dolist.herokuapp.com/ METHOD GET => mostra todas as tarefas listadas no banco de dados.
+ * https://backend-dolist.herokuapp.com/:id METHOD GET => mostra uma tarefa específica.
+ * https://backend-dolist.herokuapp.com/submit METHOD POST => cadastra uma nova tarefa.
+ * https://backend-dolist.herokuapp.com/edit/:id METHOD PUT => altera uma tarefa já cadastrada.
+ * https://backend-dolist.herokuapp.com/delete/:id METHOD DELETE => apaga uma tarefa pré-cadastrada.
 ```
 
 ## 🤝 Colaboradores
