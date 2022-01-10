@@ -1,8 +1,6 @@
-if(process.env.NODE_ENV != 'production'){
+if(process.env.NODE_ENV !== 'production'){
   require('dotenv').config();
 }
-
-
 
 const express = require('express');
 const cors = require('cors');
@@ -24,6 +22,6 @@ const db_data = process.env.DB_DATA;
 
 Conn(db_url, db_user, db_pass, db_data);
 
-app.listen(process.env.PORT | port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`App rodando em http://localhost:${port}`)
 })
